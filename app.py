@@ -11,7 +11,6 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/api/data', methods=['GET'])
 def get_data():
-            print("====")
             data = {'message': 'Hello from the Server!'}
             return data
 
@@ -31,7 +30,6 @@ def parse_schedule(note):
 
 @app.route('/generate-ics', methods=['POST', 'OPTIONS'])
 def generate_ics():
-    print("C-----------------------++++++++++++++++-----------)))))")
     if request.method == 'OPTIONS':
         # Respond to preflight request
         response = app.make_default_options_response()
@@ -68,4 +66,5 @@ def generate_ics():
 
 
 if __name__ == '__main__':
-            app.run(debug=True)
+            app.run(host='0.0.0.0', port=10000, debug=True)
+

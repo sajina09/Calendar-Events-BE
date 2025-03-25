@@ -2,6 +2,9 @@ services:
   - type: web
     name: calendar-backend
     env: python
-    buildCommand: ""
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python app.py"
     plan: free
+    envVars:
+      - key: PORT
+        value: 10000
